@@ -9,7 +9,6 @@ export default function RegisterForm() {
   const [price, setPrice] = useState("");
   const [error, setError] = useState("");
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -17,7 +16,6 @@ export default function RegisterForm() {
       setError("All fields are necessary.");
       return;
     }
-
     try {
       const res = await fetch("api/addproduk", {
         method: "POST",
@@ -30,7 +28,6 @@ export default function RegisterForm() {
           price,
         }),
       });
-
       if (res.ok) {
         const form = e.target;
         form.reset();
